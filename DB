@@ -1,0 +1,93 @@
+package com.example.levb.laudanum;
+
+
+import android.content.Context;
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteDatabase.CursorFactory;
+import android.database.sqlite.SQLiteOpenHelper;
+
+public class DB {
+    static final String ATTR_TITLE="title";
+    static final String ATTR_AMOUNT="amount";
+    static final String ATTR_IMG="img";
+    static int[] values={88,98,45,56,54,12,8,65};
+    static String[] title={"Meat","Eggs","Bread","Lamp","car","potato","door","bike"};
+    static int[] img={R.drawable.meat,R.drawable.egg,R.drawable.bread,R.drawable.lamp,R.drawable.car,R.drawable.potato,R.drawable.door,R.drawable.bike};
+    static int[] amount={56,89,54,5564,212,1,32321,545};
+
+    private static final String DB_NAME = "mydb";
+    private static final int DB_VERSION = 1;
+    private static final String DB_TABLE = "mytab";
+
+    public static final String COLUMN_ID = "_id";
+    public static final String COLUMN_IMG = "img";
+    public static final String COLUMN_TITLE = "title";
+    public static final String COLUMN_AMOUNT = "amount";
+
+    static final String DB_CREATE =
+            "create table " + DB_TABLE + "("
+                    + COLUMN_ID + " integer primary key autoincrement,"
+                    + COLUMN_TITLE + " text,"
+                    + COLUMN_AMOUNT + " text,"
+                    + COLUMN_IMG + " integer" + ");";
+
+    private final Context mCtx;
+    public DB(Context context){
+        mCtx=context;
+    }
+    private DBHelper mdbhelper;
+    private SQLiteDatabase mDb;
+
+    public void open(){
+        mdbhelper=new DBHelper(mCtx,DB_NAME,null,DB_VERSION);
+        mDb=mdbhelper.getWritableDatabase();
+    }
+    public void close(){
+        if(mdbhelper!=null) mdbhelper.close();
+    }
+
+    public Cursor getDataAll(){
+        return mDb.query(DB_TABLE,null,null,null,null,null,null,null);
+    }
+    public void addRec(String title,String amount,int img){
+        ContentValues cv=new ContentValues();
+        cv.put(ATTR_TITLE,title);
+        cv.put(ATTR_AMOUNT,amount);
+        cv.put(ATTR_IMG,img);
+        mDb.insert(DB_TABLE,null,cv);
+    }
+    public void delRec(long id){
+        mDb.delete(DB_TABLE,COLUMN_ID+"="+id,null);
+    }
+
+    public class DBHelper extends SQLiteOpenHelper {
+
+        public DBHelper(Context context,String name,SQLiteDatabase.CursorFactory factory,int version){
+            super(context,name,factory,version);
+        }
+
+        @Override
+        public void onCreate(SQLiteDatabase db){
+            db.execSQL(DB_CREATE);
+            ContentValues cv;
+            cv=new ContentValues();
+            for(int i=0;i<values.length;i++){
+
+                cv.put(ATTR_TITLE,title[i]+" шт.");
+                cv.put(ATTR_AMOUNT,"03.05.2019  "+amount[i]+" сом.");
+                cv.put(ATTR_IMG,img[i]);
+                db.insert(DB_TABLE,null,cv);
+            }
+
+        }
+        @Override
+        public void onUpgrade(SQLiteDatabase db,int old,int newVers){
+
+        }
+
+    }
+
+}

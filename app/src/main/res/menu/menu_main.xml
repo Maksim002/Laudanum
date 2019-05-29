@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/item_contact"
+
+        android:title="contacts">
+
+    </item>
+    <item
+        android:id="@+id/item_address"
+
+
+        android:title="address">
+
+    </item>
+    <item
+        android:id="@+id/item_about"
+
+        android:orderInCategory="1"
+        android:title="about">
+
+    </item>
+    <group
+        android:id="@+id/group1">
+    <item
+        android:id="@+id/item_settings"
+        android:title="settings">
+
+    </item>
+    <item
+        android:id="@+id/item_actions"
+        android:orderInCategory="4"
+        android:title="actions">
+
+    </item>
+    <item
+        android:id="@+id/item_realize"
+        android:orderInCategory="2"
+        android:title="realize projects">
+
+    </item>
+    <item
+        android:id="@+id/item_list"
+        android:orderInCategory="3"
+        android:title="list beneficiars">
+
+    </item>
+    </group>
+
+</menu>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll2"
+android:layout_weight="10"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ivProd2"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+
+            android:src="@drawable/bl2" />
+
+        <TextView
+            android:id="@+id/tvTitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+
+            android:fontFamily="@font/im_fell_english_sc"
+            android:padding="5dp"
+            android:paddingTop="5dp"
+            android:text="Life power"
+            android:textSize="50sp" />
+
+        <EditText
+            android:id="@+id/editText5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:ems="10"
+            android:fontFamily="@font/im_fell_english_sc"
+            android:inputType="text|textMultiLine"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:text="this action helps to find funds for old people from nursing homes"
+            android:textColor="@android:color/black"
+            android:textStyle="normal|bold" />
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/imgbtnwht"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+
+
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="0dp"
+            android:onClick="onclick"
+            android:src="@drawable/whatsapp" />
+
+        <ImageButton
+            android:id="@+id/imgbtninst"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:onClick="onclick"
+            android:src="@drawable/instagramm" />
+
+        <ImageButton
+            android:id="@+id/imgbtnfcb"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="44dp"
+            android:onClick="onclick"
+            android:src="@drawable/facebook" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+<fragment
+    android:id="@+id/list_frag"
+    android:name="com.example.levb.laudanum.fragment"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+
+        android:background="@color/colorPrimaryDark"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/imgbtnwht"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="48dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="0dp"
+            android:onClick="onclick"
+            android:src="@drawable/whatsapp" />
+
+        <ImageButton
+            android:id="@+id/imgbtninst"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:onClick="onclick"
+            android:src="@drawable/instagramm" />
+
+        <ImageButton
+            android:id="@+id/imgbtnfcb"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="44dp"
+            android:layout_marginRight="44dp"
+            android:onClick="onclick"
+            android:src="@drawable/facebook" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
